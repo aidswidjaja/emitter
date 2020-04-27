@@ -1,0 +1,158 @@
+<!doctype html>
+<html class="no-js" lang="en-AU">
+<meta http-equiv="refresh" content="7">
+<!-- This file is based off version 1.0 of Adrian's HTML5 Boilerplate at https://github.com/aidswidjaja/html5-boilerplate/ -->
+<!-- Adrian's HTML5 Boilerplate is based off HTML5 Boilerplate from H5BP, distributed initially under the MIT License -->
+<!-- Adrian's HTML5 Boilerplate is distributed under the Mozilla Public License 2.0 at https://www.mozilla.org/en-US/MPL/2.0/ -->
+
+<head>
+    <meta charset="utf-8">
+    <title>Emitter</title>
+    <link rel="icon" class="favicon" type="image/*" href=""> <!-- I know image/* is bad practice, but let's cross our fingers and hope it works-->
+    <meta name="description"
+        content="Emitter is like a Great Pacific Garbage Patch for your Internet search history. Obfuscate, pollute and muddy up what sites you visits with absolutely useless data (to prevent any sneaky foxes from using it against you!)">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fafafa">
+    <style>
+        body {
+            font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+            text-align: center;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <h1>Emitter</h1>
+    <h2>Obfuscate, pollute and muddy up your local internet surveillance system with absolutely useless data</h2>
+    <h4 id="refreshDate"></h4>
+    <a href="https://github.com/aidswidjaja">
+        <h4>2020 © aidswidjaja on GitHub under Apache-2.0</h4>
+    </a>
+    <h4>Version 1.0 - 27 April 2020</h4>
+    <p><b>How do I use this?</b> Leave <a href="aidswidjaja.github.io/emitter">this page</a> open in your browser, and it will load random webpages and web images
+        every 7 seconds through HTTPS <code>port 443</code>.
+        Hopefully you have unlimited broadband! Also keep in mind that this website is designed to load both generic
+        websites, search results, and streaming services to cover all potentially surveillance categories. It will
+        distort any statistics based on categorical data a little bit more!
+    </p><br>
+    <p><b>How does it work?</b> Simple (by simple I mean quick and dirty) JavaScript code takes an array of URIs and
+        randomly chooses one to load into an
+        invisible <code>iframe</code>. You won't see the webpage or the images thought, as they are hidden. The page
+        automatically
+        reloads every 7 seconds using <code>meta http-equiv="refresh"</code>, triggering a new URI to be chosen. I was
+        setting up virtual
+        machines at the age of 7 btw.
+    </p><br>
+    <p><b>My internet search history looks the same.</b> This is for internet surveillance (commonly installed on school
+        and corporate networks, but also by parents), which monitor all connections through HTTP/HTTPS. This won't
+        pollute your local web browser's search history, and don't expect it, because it's not supposed to.
+    </p><br>
+    <p><b>Why did my employer/school principal/parents find me looking at Neko-Kirito?</b> Um, well I'm loading anime
+        neko images... Look look look! It'll all be fine as the URLs are pretty disguised anyway, and if you <b>want to
+            change the webpages before your friends find out too much about your secret anime watching habits, <a
+                href="https://github.com/aidswidjaja/emitter">make a fork of the project on GitHub!</a></b>
+        <br><br><br>
+        <iframe src="" class="frame" style="width: 0; height: 0; border: 0; border: none; position: absolute;"></iframe>
+        <img src="" class="picture" alt="⚠️⚠️⚠️ you're not supposed to see this message. ⚠️⚠️⚠️"
+            style="width: 0; height: 0; border: 0; border: none; position: absolute;">
+        <br>
+        <script> /// Code taken from https://stackoverflow.com/questions/44876159/random-iframe-content
+            var webpage = [
+                "https://www.google.com/search?q=what+time+is+it",
+                "https://www.google.com/search?q=local+time+to+utc",
+                "https://www.google.com/search?q=what+is+manhua",
+                "https://www.google.com/search?q=navel+oranges",
+                "https://www.google.com/search?q=what+is+osu!",
+                "https://emojipedia.org/",
+                "https://emojipedia.org/people/",
+                "https://emojipedia.org/nature/",
+                "https://emojipedia.org/food-drink/",
+                "https://www.rfs.nsw.gov.au/",
+                "https://en.wikipedia.org/wiki/Special:Random",
+                "https://twitter.com/realDonaldTrump",
+                "https://www.google.com/search?q=red&sxsrf=ALeKk02s9PemGY9MEHigYwZyJyEjj2IjqQ:1587952374746&source=lnms&tbm=isch&sa=X&ved=2ahUKEwj90N3Jv4fpAhUTXSsKHcwID88Q_AUoAXoECBAQAw",
+                "https://www.google.com/search?q=blue&sxsrf=ALeKk02s9PemGY9MEHigYwZyJyEjj2IjqQ:1587952374746&source=lnms&tbm=isch&sa=X&ved=2ahUKEwj90N3Jv4fpAhUTXSsKHcwID88Q_AUoAXoECBAQAw",
+                "https://www.google.com/search?q=yellow&sxsrf=ALeKk02s9PemGY9MEHigYwZyJyEjj2IjqQ:1587952374746&source=lnms&tbm=isch&sa=X&ved=2ahUKEwj90N3Jv4fpAhUTXSsKHcwID88Q_AUoAXoECBAQAw",
+                "https://www.google.com/search?q=green&sxsrf=ALeKk02s9PemGY9MEHigYwZyJyEjj2IjqQ:1587952374746&source=lnms&tbm=isch&sa=X&ved=2ahUKEwj90N3Jv4fpAhUTXSsKHcwID88Q_AUoAXoECBAQAw",
+                "https://www.ptable.com/",
+                "https://www.google.com/search?&q=pickle",
+                "https://iview.abc.net.au/",
+                "https://iview.abc.net.au/",
+                "https://iview.abc.net.au/",
+                "https://iview.abc.net.au/",
+                "https://iview.abc.net.au/",
+                "https://iview.abc.net.au/", /// Yes lets trick everyone thinking I watch a lot of ABC when in fact I watch animelab
+                "https://www.bbc.co.uk/iplayer",
+                "https://www.sbs.com.au/ondemand/",
+                "https://twitch.tv",
+                "https://twitch.tv",
+                "https://twitch.tv",
+                "https://twitch.tv",
+                "https://cnnindonesia.com",
+                "https://nekoatsume.fandom.com/wiki/Rare_Cats_Guide",
+            ];
+            var image = [
+                "https://images3.alphacoders.com/157/thumb-350-157265.jpg",
+                "https://i.redd.it/pkwiyzrfr5s21.jpg",
+                "https://preschoolinspirations.com/wp-content/uploads/2019/03/Yoast-rainbow-songs-for-kids.jpg",
+                "https://external-preview.redd.it/_r1gxL1Rs63hKIE9wFuwlTTngKn9Hv_dObiW2BbD6U4.png?auto=webp&s=4aaebc5c3f014aacd85184c61cd57cf76d962380",
+                "https://i.pinimg.com/originals/d8/90/e0/d890e0e4ec9f035e3a05d04a95307c0f.png",
+                "https://pbs.twimg.com/profile_images/1015522766861168641/qYaWUCU7_400x400.jpg",
+                "https://s1.narvii.com/image/wzafcbsrc2w4f4whcdkswfq5776bsmeg_hq.jpg",
+                "https://picsum.photos/200/300",
+                "https://picsum.photos/200/300",
+                "https://picsum.photos/200/300",
+                "https://picsum.photos/200/300",
+                "https://picsum.photos/200/300",
+                "https://cdn.vox-cdn.com/thumbor/zFHvRdd6YPHQM91EAxQOTdpIs0U=/0x138:1420x1085/1400x1400/filters:focal(0x138:1420x1085):format(jpeg)/cdn.vox-cdn.com/uploads/chorus_image/image/48479923/IMG_3874.0.0.jpg"
+            ];
+            ///
+            var myFrame = document.getElementsByClassName("frame")[0];
+            function getRandomUrlIchi(myFrame) {
+                var index = Math.floor(Math.random() * webpage.length);
+                var url = webpage[index];
+                myFrame.src = url;
+            }
+            function codeAddressIchi() {
+                getRandomUrlIchi(myFrame);
+            }
+            codeAddressIchi();
+            console.log("[Emitter Emitted...] Webpage Load Success! " + myFrame.src);
+            ///
+            var myPicture = document.getElementsByClassName("picture")[0];
+            function getRandomUrlNi(myPicture) {
+                var index = Math.floor(Math.random() * image.length);
+                var url = image[index];
+                myPicture.src = url;
+            }
+            function codeAddressNi() {
+                getRandomUrlNi(myPicture);
+            }
+            codeAddressNi();
+            console.log("[Emitter Emitted...] Image Load Success! " + myPicture.src);
+            ///
+            var myFavicon = document.getElementsByClassName("favicon")[0];
+            function getRandomUrlSan(myFavicon) {
+                var index = Math.floor(Math.random() * image.length);
+                var url = image[index];
+                myFavicon.href = url;
+            }
+            function codeAddressSan() {
+                getRandomUrlSan(myFavicon);
+            }
+            codeAddressSan();
+            console.log("[Emitter Emitted...] Favicon Load Success! " + myFavicon.href)
+        </script>
+        <script type="text/javascript">
+            codeAddressIchi();
+            codeAddressNi();
+            codeAddressSan();
+        </script>
+        <script> /// Code taken from https://stackoverflow.com/questions/47145699/how-show-the-date-time-of-last-page-refresh-on-top-of-google-map
+            var x = new Date(document.lastModified);
+            document.getElementById("refreshDate").textContent = "Page last refreshed: " + new Date();
+        </script>
+</body>
+
+</html>
